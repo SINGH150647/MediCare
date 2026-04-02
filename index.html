@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Hospital Appointment Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-content">
+            <i class="fas fa-heartbeat"></i>
+            <h2>MediCare</h2>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-hospital"></i>
+                <span>MediCare</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#doctors" class="nav-link">Doctors</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="booking.html" class="nav-link">Book Appointment</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="profile-btn">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Book Your Appointment <span class="gradient-text">Online</span></h1>
+            <p>24/7 Access to Top Doctors. Fast, Secure & Easy Booking</p>
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search doctors or specialties..." id="searchInput">
+                    <div class="search-suggestions">
+                        <div>Cardiologist</div>
+                        <div>Dentist</div>
+                        <div>Neurologist</div>
+                        <div>Pediatrician</div>
+                    </div>
+                </div>
+                <button class="cta-btn primary" onclick="openBookingModal()">
+                    <i class="fas fa-calendar-plus"></i>
+                    Book Now
+                </button>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <h3>500+</h3>
+                <p>Doctors</p>
+            </div>
+            <div class="stat">
+                <h3>10K+</h3>
+                <p>Patients</p>
+            </div>
+            <div class="stat">
+                <h3>24/7</h3>
+                <p>Available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Specialties</h2>
+            <div class="services-grid">
+                <div class="service-card" data-specialty="Cardiology">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Cardiology</h3>
+                    <p>Heart health specialists</p>
+                </div>
+                <div class="service-card" data-specialty="Dentistry">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3>Dentistry</h3>
+                    <p>Oral health experts</p>
+                </div>
+                <div class="service-card" data-specialty="Neurology">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neurology</h3>
+                    <p>Brain & nerve care</p>
+                </div>
+                <div class="service-card" data-specialty="Pediatrics">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Pediatrics</h3>
+                    <p>Child healthcare</p>
+                </div>
+                <div class="service-card" data-specialty="Orthopedics">
+                    <div class="service-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3>Orthopedics</h3>
+                    <p>Bone & joint care</p>
+                </div>
+                <div class="service-card" data-specialty="Dermatology">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-medical"></i>
+                    </div>
+                    <h3>Dermatology</h3>
+                    <p>Skin specialists</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section id="doctors" class="doctors">
+        <div class="container">
+            <h2 class="section-title">Our Expert Doctors</h2>
+            <div class="doctors-grid">
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="dr-singh.jpeg" alt=""> // // image 1
+                        <div class="doctor-status online"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. GOVINDA SINGH</h3>
+                        <p class="specialty">Cardiologist</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (127)</span>
+                        </div>
+                        <button class="btn-book" onclick="bookDoctor('Dr. Sarah Johnson')">Book Now</button>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="dr-johnny.png" alt="Dr. Michael">  // image 2
+                        <div class="doctor-status offline"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Johnny Raj</h3>
+                        <p class="specialty">Neurologist</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.8 (89)</span>
+                        </div>
+                        <button class="btn-book" onclick="bookDoctor('Dr. Michael Chen')">Book Now</button>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=400&fit=crop" alt="Dr. Emily">  // // image 3
+                        <div class="doctor-status online"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3>Dr. Emily Rodriguez</h3>
+                        <p class="specialty">Pediatrician</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0 (156)</span>
+                        </div>
+                        <button class="btn-book" onclick="bookDoctor('Dr. Emily Rodriguez')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Our Hospital</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>MediCare Hospital is committed to providing exceptional healthcare services with a team of dedicated professionals. We offer comprehensive medical care across various specialties.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3>500+</h3>
+                        <p>Expert Doctors</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>2000+</h3>
+                        <p>Staff Members</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <h3>1000+</h3>
+                        <p>Hospital Beds</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h3>50+</h3>
+                        <p>Medical Services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2><i class="fas fa-calendar-check"></i> Book Appointment</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="patientName" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Specialty</label>
+                        <select id="specialty" required>
+                            <option value="">Select Specialty</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Dentistry">Dentistry</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Orthopedics">Orthopedics</option>
+                            <option value="Dermatology">Dermatology</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Doctor</label>
+                        <select id="doctor" required>
+                            <option value="">Select Doctor</option>
+                            <option value="Dr. Sarah Johnson">Dr. Sarah Johnson</option>
+                            <option value="Dr. Michael Chen">Dr. Michael Chen</option>
+                            <option value="Dr. Emily Rodriguez">Dr. Emily Rodriguez</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="appointmentDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <select id="appointmentTime" required>
+                            <option value="">Select Time</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Reason for Visit</label>
+                    <textarea id="reason" rows="3" placeholder="Describe your symptoms or reason for visit..."></textarea>
+                </div>
+                <button type="submit" class="cta-btn primary full-width">
+                    <i class="fas fa-check"></i>
+                    Confirm Booking
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Appointments Dashboard -->
+    <div id="appointmentsModal" class="modal">
+        <div class="modal-content dashboard">
+            <span class="close" onclick="closeAppointmentsModal()">&times;</span>
+            <h2><i class="fas fa-list"></i> My Appointments</h2>
+            <div id="appointmentsList"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-hospital"></i>
+                        <span>MediCare</span>
+                    </div>
+                    <p>Your trusted healthcare partner for quality medical services.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#doctors">Doctors</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>704 Health St, Nashik MH </span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 62063 45108</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@medicare.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MediCare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
